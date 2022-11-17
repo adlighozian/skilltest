@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    // Nomor 1
+    function nomor1(param) {
+        var ar = param;
+        var isi = ar.length;
+        var reverseString = ar.sort();
+        var box = [];
+        for (let i = 0; i < isi; i++) {
+            var a = reverseString[i] / reverseString[i + 1];
+            if (a === 1) {
+                reverseString.shift(0)
+                box.push(a)
+
+            }
+        }
+        var hasil = box.length;
+        return ("Nomor 1 = " + hasil)
+    }
+    console.log(nomor1([1, 1, 3, 1, 2, 1, 3, 3, 3, 3]));
+
+    // Nomor 2
+    function nomor2(params) {
+        var kalimat = params
+        var array = kalimat.split(" ");
+        // console.log(array);
+        var isi = array.length;
+        var box = []
+
+        for (let i = 0; i < isi; i++) {
+            var child = array[i].split("");
+            var arrays = array[i];
+            var pan = child.length
+
+            for (let a = 0; a < pan; a++) {
+                if (child[a] === "!" && "[") {
+                    box.push(arrays)
+                } else if (child[a] === "[") {
+                    box.push(arrays)
+                } else if (child[a] === "*") {
+                    box.push(arrays)
+                } else if (child[a] === "_") {
+                    box.push(arrays)
+                } else if (child[a] === "?") {
+                    box.push(arrays)
+                } else if (child[a] === "(") {
+                    box.push(arrays)
+                } else if (child[a] === ")") {
+                    box.push(arrays)
+                } else if (child[a] === "{") {
+                    box.push(arrays)
+                } else if (child[a] === "}") {
+                    box.push(arrays)
+                }
+            }
+        }
+        var boxs = box.length
+
+        var hasil = isi - boxs
+        return ("Nomor 2 = " + hasil)
+    }
+    console.log(nomor2("Kemarin Shopia per!gi ke[ mall)"));
+</script>
+
+
+</html>
