@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Detail() {
   const navigate = useNavigate();
@@ -25,17 +25,9 @@ function Detail() {
       });
   };
 
-  const back = () => {
-    navigate("/");
-    localStorage.removeItem("url");
-  };
-
   useEffect(() => {
     axiosget();
-  });
-
-  useEffect(() => {
-    if (url === null) {
+    if (!url) {
       navigate("/");
     }
   });
@@ -57,12 +49,11 @@ function Detail() {
           </div>
           <p>Height: {pokemon.height}</p>
           <p>species: {species}</p>
-          <button
-            onClick={back}
-            className="mt-10 p-2 bg-purple-600 text-white rounded-xl"
-          >
-            Kembali ke home
-          </button>
+          <Link to={"/"}>
+            <button className="mt-10 p-2 bg-purple-600 text-white rounded-xl">
+              Kembali ke home
+            </button>
+          </Link>
         </div>
       </div>
     </>
